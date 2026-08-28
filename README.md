@@ -43,5 +43,3 @@ Each completed run writes exactly:
 - `fold_results.csv`: one row per fold with exact metrics, predictions, targets, and provenance.
 
 Existing files are overwritten only inside the explicitly requested output directory. The process never changes the working directory.
-
-See [DATA.md](docs/DATA.md) for the external array contract and [REPRODUCIBILITY.md](docs/REPRODUCIBILITY.md) for the complete workflow.

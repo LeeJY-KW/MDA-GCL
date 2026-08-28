@@ -1,0 +1,27 @@
+dataset: seed_v
+protocol: cross_subject
+de_path: data/seed_v/subject_de.npy
+psd_path: null
+eye_path: data/seed_v/subject_eye.npy
+label_path: data/seed_v/subject_label.npy
+n_subjects: 16
+n_classes: 5
+n_samples_per_subject: 1823
+session_boundaries: [[0, 681], [681, 1222], [1222, 1823]]
+
+eeg_single_feature_dim: 310
+eye_feature_dim: 33
+
+seed: 2025
+k1: dynamic
+k2: 120
+fusion_steps: 1
+hidden_dim: 256
+embedding_dim: 128
+learning_rate: 0.0005
+weight_decay: 0.0001
+epochs: 3000
+temperature: 0.7
+feature_mask_probs: [0.1, 0.2]
+edge_drop_probs: [0.1, 0.2]
+contrastive_weight: 0.01

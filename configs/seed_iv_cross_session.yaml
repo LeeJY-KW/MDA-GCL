@@ -1,0 +1,27 @@
+dataset: seed_iv
+protocol: cross_session
+de_path: data/seed_iv/SEED_IV_4S_DE.npy
+psd_path: data/seed_iv/SEED_IV_4S_PSD.npy
+eye_path: data/seed_iv/SEED_IV_4S_EYE.npy
+label_path: data/seed_iv/SEED_IV_4S_LABEL.npy
+n_subjects: 15
+n_classes: 4
+n_samples_per_subject: 2505
+session_boundaries: [[0, 851], [851, 1683], [1683, 2505]]
+
+eeg_single_feature_dim: 310
+eye_feature_dim: 31
+
+seed: 2025
+k1: dynamic
+k2: 30
+fusion_steps: 1
+hidden_dim: 256
+embedding_dim: 128
+learning_rate: 0.0005
+weight_decay: 0.0001
+epochs: 5000
+temperature: 0.7
+feature_mask_probs: [0.1, 0.2]
+edge_drop_probs: [0.1, 0.2]
+contrastive_weight: 0.05

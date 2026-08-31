@@ -1,19 +1,6 @@
-# MDA-GCL fixed-model release
+# MDA-GCL model release
 
-This directory is the GitHub-facing implementation of one fixed MDA-GCL model for four dataset/protocol configurations. It contains the model, training pipeline, YAML configurations, tests, and usage documentation. Feature arrays are external inputs. Datasets, preprocessing code, checkpoints, generated artifacts, and experimental records are not bundled.
-
-## Fixed model
-
-Every run uses the same contract:
-
-- SEED-IV views are DE, PSD, and eye features; SEED-V views are DE and eye features.
-- Each view is standardized independently for the source and target partitions. Target feature statistics are transductive, but target emotion-label values are not used for training or checkpoint selection.
-- The graph follows the paper hierarchy: DE and PSD are fused first when both exist, then the EEG graph is fused with eye features by SSNF.
-- Two stochastic projected graph views drive the paired GCL objective.
-- A binary DANN head distinguishes source from target samples.
-- The configured final epoch is evaluated once using a classifier input formed by duplicating the clean normalized-graph projected embedding; evaluation uses no stochastic augmentation.
-
-The command surface selects only the configuration, external data root, output directory, device, preflight or synthetic execution, and an optional bounded fold count.
+This directory is the GitHub-facing implementation of MDA-GCL model for four dataset/protocol configurations. It contains the model, training pipeline, YAML configurations, tests, and usage documentation. Feature arrays are external inputs. Datasets, preprocessing code, checkpoints, generated artifacts, and experimental records are not bundled.
 
 ## Install and inspect
 

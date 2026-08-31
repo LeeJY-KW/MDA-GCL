@@ -26,7 +26,7 @@ Use `--preflight-only` to validate arrays and fold compatibility without trainin
 
 Each completed run writes exactly:
 
-- `results.json`: effective configuration, fixed-model provenance, fold outputs, and aggregate metrics.
+- `results.json`: effective configuration, model provenance, fold outputs, and aggregate metrics.
 - `fold_results.csv`: one row per fold with exact metrics, predictions, targets, and provenance.
 
 Existing files are overwritten only inside the explicitly requested output directory. The process never changes the working directory.

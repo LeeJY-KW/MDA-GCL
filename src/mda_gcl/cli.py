@@ -73,7 +73,7 @@ def _fold_inputs(
     expected_names = ("de", "psd", "eye") if config.dataset == "seed_iv" else ("de", "eye")
     if bundle.view_names != expected_names or len(bundle.views) != len(expected_names):
         raise ValueError(
-            f"{config.dataset} requires fixed feature views {expected_names}; "
+            f"{config.dataset} requires feature views {expected_names}; "
             f"received {bundle.view_names}"
         )
     standardized: dict[str, np.ndarray] = {}
@@ -203,7 +203,7 @@ def run_experiment(
                 "training-or-checkpoint-selection"
             ),
         },
-        "checkpoint_rule": "fixed-final",
+        "checkpoint_rule": "final-epoch",
         "domain_class_count": 2,
         "grl_cap": 0.02,
         "gradient_clip_max_norm": 0.1,

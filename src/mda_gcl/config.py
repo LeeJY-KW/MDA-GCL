@@ -139,9 +139,9 @@ class ExperimentConfig:
             ):
                 raise ValueError(f"{name} must be a release-relative path")
         if self.de_path is None or self.eye_path is None:
-            raise ValueError("de_path and eye_path are required for the fixed main model")
+            raise ValueError("de_path and eye_path are required for the main model")
         if self.dataset == "seed_iv" and self.psd_path is None:
-            raise ValueError("psd_path is required for the SEED-IV fixed main model")
+            raise ValueError("psd_path is required for the SEED-IV main model")
         if self.dataset == "seed_v" and self.psd_path is not None:
             raise ValueError("SEED-V PSD arrays are unavailable; psd_path must be null")
 

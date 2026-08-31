@@ -78,14 +78,14 @@ def test_module_help_exposes_only_operational_options() -> None:
         "seed_v_cross_session.yaml",
     ],
 )
-def test_four_fixed_main_dry_runs_write_only_json_and_csv(tmp_path: Path, name: str) -> None:
+def test_four_main_dry_runs_write_only_json_and_csv(tmp_path: Path, name: str) -> None:
     output = tmp_path / name.removesuffix(".yaml")
     result = cli.run_experiment(_config(name), dry_run=True, output_dir=output)
 
     assert result["dry_run"] is True
     assert result["evidence_status"] == "synthetic-smoke"
     assert result["selected_fold_count"] == 1
-    assert result["checkpoint_rule"] == "fixed-final"
+    assert result["checkpoint_rule"] == "final-epoch"
     assert result["domain_class_count"] == 2
     assert result["grl_cap"] == 0.02
     assert result["gradient_clip_max_norm"] == 0.1
@@ -158,7 +158,7 @@ def test_fold_inputs_use_label_free_independent_partition_statistics(protocol: s
     assert provenance["topology"] == "intra-eeg-ssnf+inter-view-ssnf-balanced"
 
 
-def test_fixed_view_contract_and_hierarchical_topology(monkeypatch: pytest.MonkeyPatch) -> None:
+def test_view_contract_and_hierarchical_topology(monkeypatch: pytest.MonkeyPatch) -> None:
     config = replace(
         load_config(_config()),
         n_samples_per_subject=2,
@@ -186,7 +186,7 @@ def test_fixed_view_contract_and_hierarchical_topology(monkeypatch: pytest.Monke
     np.testing.assert_allclose(adjacency, 0.5)
     assert provenance["topology"] == "intra-eeg-ssnf+inter-view-ssnf-balanced"
     bad = FeatureBundle(bundle.features[:, :3], bundle.labels, views[:2], ("de", "eye"))
-    with pytest.raises(ValueError, match="requires fixed feature views"):
+    with pytest.raises(ValueError, match="requires feature views"):
         cli._fold_inputs(config, bad, fold)
 
 

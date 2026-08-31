@@ -107,13 +107,13 @@ def test_model_has_unconditional_projection_binary_domain_and_paired_heads() -> 
 
 
 @pytest.mark.parametrize("protocol", ["cross_subject", "cross_session"])
-def test_fixed_main_training_is_cpu_safe_and_clean_evaluation_is_deterministic(protocol: str) -> None:
+def test_main_training_is_cpu_safe_and_clean_evaluation_is_deterministic(protocol: str) -> None:
     config = make_config(protocol=protocol)
     global_rng_before = torch.random.get_rng_state().clone()
     model, result = train_tiny(config)
 
     torch.testing.assert_close(torch.random.get_rng_state(), global_rng_before)
-    assert result.checkpoint_rule == "fixed-final"
+    assert result.checkpoint_rule == "final-epoch"
     assert result.checkpoint_epoch == config.epochs
     assert result.evaluation_graph == "clean-normalized"
     assert result.domain_class_count == model.domain_classes == 2
@@ -155,7 +155,7 @@ def test_read_only_fold_indices_are_copied_without_warnings() -> None:
         )
 
     assert caught == []
-    assert result.checkpoint_rule == "fixed-final"
+    assert result.checkpoint_rule == "final-epoch"
     assert len(result.predictions) == len(result.targets) == 2
     assert model.training is True
     assert fold.source_indices.flags.writeable is False

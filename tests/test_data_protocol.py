@@ -43,7 +43,7 @@ def save_arrays(directory: Path, dataset: str) -> None:
     ("dataset", "names", "feature_dim"),
     [("seed_iv", ("de", "psd", "eye"), 651), ("seed_v", ("de", "eye"), 343)],
 )
-def test_dataset_loads_only_fixed_main_views(
+def test_dataset_loads_only_main_views(
     tmp_path: Path, dataset: str, names: tuple[str, ...], feature_dim: int
 ) -> None:
     save_arrays(tmp_path, dataset)

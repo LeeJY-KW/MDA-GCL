@@ -283,7 +283,7 @@ def train_fold(
 
     ``features`` and ``emotion_labels`` use global dataset row order. The
     adjacency uses ``fold.indices`` source-then-target order. Target emotion
-    labels are read only after the fixed final epoch has been committed.
+    labels are read only after the configured final epoch has been committed.
     """
 
     resolved_device = torch.device(device)
@@ -427,7 +427,7 @@ def train_fold(
     ).numpy()
     result = FoldResult(
         fold_id=fold.fold_id,
-        checkpoint_rule="fixed-final",
+        checkpoint_rule="final-epoch",
         checkpoint_epoch=config.epochs,
         evaluation_graph="clean-normalized",
         optimizer_learning_rate=float(config.learning_rate),

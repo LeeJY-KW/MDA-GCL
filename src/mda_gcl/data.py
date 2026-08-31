@@ -98,7 +98,7 @@ def load_feature_bundle(
     config: ExperimentConfig,
     base_dir: str | Path = ".",
 ) -> FeatureBundle:
-    """Load the fixed main feature views for the configured dataset."""
+    """Load the main feature views for the configured dataset."""
 
     root = Path(base_dir)
     labels = _load_labels(config, root)

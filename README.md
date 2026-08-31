@@ -34,6 +34,12 @@ MDA-GCL combines three components:
 
 The graph represents similarities between temporal sample windows. It is not an anatomical brain-connectivity or EEG-attention map.
 
+## 📝 Abstract
+---
+Multimodal emotion recognition leveraging electroencephalography (EEG) and eye-movement (EM) signals is a fundamental component in affective computing. However, modeling the cross-modal correlations between heterogeneous modalities and mitigating the domain shifts caused by individual physiological variability and temporal measurement fluctuations remain significant challenges. In this paper, we propose a framework, Multimodal Domain Adversarial Graph Contrastive Learning (MDA-GCL), to address these issues in cross-subject and cross-session scenarios. Specifically, we first introduce a Symmetric Similarity Network Fusion (SSNF) strategy to construct a unified multimodal graph, which serves as a structured sample-level affinity manifold representing the complementary physiological dynamics between the central and peripheral nervous systems. To counteract the risk of negative transfer—where forced domain alignment inadvertently blurs emotion class boundaries—we integrate a Domain-Adversarial Neural Network (DANN) with Graph Contrastive Learning (GCL). While GCL extracts task-relevant perturbation-invariant representations to preserve class separability, DANN simultaneously reduces domain-specific nuisance biases via minimax optimization. Experiments on the SEED-IV and SEED-V datasets show that MDA-GCL achieves 76.1% and 83.8% on SEED-IV, and 75.6% and 82.5% on SEED-V under batch-wise transductive cross-subject and cross-session protocols, respectively. The topology and module ablations indicate that the performance gains arise from the combined effect of the SSNF-based graph representation and the downstream GCL--DANN joint learning objective rather than from any single component alone. The implementation of MDA-GCL and the experimental configurations used in this study are publicly available at GitHub: https://github.com/LeeJY-KW/MDA-GCL.
+
+---
+
 ## 📦 Repository contents
 
 ```text

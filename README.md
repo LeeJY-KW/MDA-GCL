@@ -1,4 +1,4 @@
-# Adversarial Graph Contrastive Learning with Topology-Aware Multimodal Fusion for Cross-Domain Emotion Recognition
+# [KBS] Adversarial Graph Contrastive Learning with Topology-Aware Multimodal Fusion for Cross-Domain Emotion Recognition
 
 <div align="center">
 
@@ -7,7 +7,7 @@
 Department of Electronics and Communications Engineering, Kwangwoon University, Seoul, Republic of Korea
 
 ![Journal](https://img.shields.io/badge/Journal-Knowledge--Based%20Systems-2f6f9f.svg)
-![Status](https://img.shields.io/badge/Status-Under%20Revision-f39c12.svg)
+![Status](https://img.shields.io/badge/Status-Accepted-f39c12.svg)
 ![Python](https://img.shields.io/badge/Python-%E2%89%A53.10-3776ab.svg)
 
 <sup>*</sup>Corresponding author
@@ -19,6 +19,9 @@ Department of Electronics and Communications Engineering, Kwangwoon University, 
 ## 📢 Manuscript status
 
 > **Important:** The manuscript has been submitted to *Knowledge-Based Systems* and is currently under revision. The manuscript itself has not yet been updated to reflect the latest revision work, so some descriptions may temporarily differ from this code release. This notice does not indicate acceptance or publication.
+
+>  **[26 Aug. 2026]** 🎉 Our paper **"Adversarial Graph Contrastive Learning with Topology-Aware Multimodal Fusion for Cross-Domain Emotion Recognition"** has been accepted in ***Knowledge-Based Systems*** (IF: 8.0) (August 31, 2026)!
+
 
 The title and author information above follow the current manuscript draft and may be updated as the revision proceeds.
 

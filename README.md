@@ -20,6 +20,9 @@ Department of Electronics and Communications Engineering, Kwangwoon University, 
 
 > **Important:** The manuscript has been submitted to *Knowledge-Based Systems* and is currently under revision. The manuscript itself has not yet been updated to reflect the latest revision work, so some descriptions may temporarily differ from this code release. This notice does not indicate acceptance or publication.
 
+>  **[26 Aug. 2026]** 🎉 Our paper **"Adversarial Graph Contrastive Learning with Topology-Aware Multimodal Fusion for Cross-Domain Emotion Recognition"** has been published in ***Knowledge-Based Systems*** (IF: 8.0) (August 26, 2026, [doi:10.1109/LSP.2026.3727949](https://doi.org/10.1109/LSP.2026.3727949))!
+
+
 The title and author information above follow the current manuscript draft and may be updated as the revision proceeds.
 
 ## 🔍 Overview
